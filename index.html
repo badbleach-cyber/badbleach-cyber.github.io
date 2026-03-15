@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Len大师 - 专业按摩服务 | www.LenSPA.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // Tailwind 配置
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2D6A4F',    // 主色调：森系绿
+                        secondary: '#95D5B2',  // 辅助色：浅绿
+                        accent: '#D8F3DC',     // 强调色：淡绿
+                        dark: '#1B4332',       // 深色
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-hand-paper-o text-primary text-2xl"></i>
+                <h1 class="text-xl md:text-2xl font-bold text-primary">Len大师</h1>
+            </div>
+            
+            <!-- 桌面端导航 -->
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="text-gray-700 hover:text-primary transition">首页</a></li>
+                <li><a href="#services" class="text-gray-700 hover:text-primary transition">服务项目</a></li>
+                <li><a href="#booking" class="text-gray-700 hover:text-primary transition">在线预约</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-primary transition">联系我们</a></li>
+            </ul>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航菜单 -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white px-4 py-2 shadow-lg">
+            <ul class="space-y-3 pb-3">
+                <li><a href="#home" class="block text-gray-700 hover:text-primary">首页</a></li>
+                <li><a href="#services" class="block text-gray-700 hover:text-primary">服务项目</a></li>
+                <li><a href="#booking" class="block text-gray-700 hover:text-primary">在线预约</a></li>
+                <li><a href="#contact" class="block text-gray-700 hover:text-primary">联系我们</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 首页横幅 -->
+    <section id="home" class="relative bg-primary/90 text-white py-20 md:py-32">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1040/1920/1080'); mix-blend-mode: overlay;"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl">
+                <h2 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-shadow">专业按摩 · 身心放松</h2>
+                <p class="text-lg md:text-xl mb-8 text-gray-100">Len大师拥有10年以上按摩经验，专注于中式推拿、泰式按摩、精油SPA等专业服务，为您缓解疲劳，重塑健康状态。</p>
+                <a href="#booking" class="inline-block bg-white text-primary font-medium px-8 py-3 rounded-lg hover:bg-secondary hover:text-dark transition duration-300 shadow-lg">
+                    立即预约 <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">我们的服务</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">精选多种专业按摩服务，满足您的不同需求，每一位技师都经过严格培训和考核</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 服务卡片1 - Len大师体质调理 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <img src="https://picsum.photos/id/237/600/400" alt="spa按摩" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-dark">Len大师体质调理</h3>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">¥299/60分钟</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">帮助调理亚健康状态，通过专业的按摩手法改善身体机能，提升免疫力，恢复身体活力。</p>
+                        <button class="add-to-cart w-full bg-primary text-white py-2 rounded-lg hover:bg-dark transition" data-service="Len大师体质调理" data-price="299">
+                            选择此项 <i class="fa fa-plus ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 服务卡片2 - Len大师肩颈背按摩 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <img src="https://picsum.photos/id/177/600/400" alt="spa肩颈按摩" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-dark">Len大师肩颈背按摩</h3>
+                            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">¥199/60分钟</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">专业针对肩颈背部位的按摩手法，缓解肌肉紧张和疼痛，改善颈椎腰椎不适，恢复身体舒适状态。</p>
+                        <button class="add-to-cart w-full bg-primary text-white py-2 rounded-lg hover:bg-dark transition" data-service="Len大师肩颈背按摩" data-price="199">
+                            选择此项 <i class="fa fa-plus ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 购物车/预约表单 -->
+    <section id="booking" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">在线预约</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">填写预约信息，我们将尽快与您确认</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- 购物车 -->
+                <div class="lg:col-span-1 bg-accent/30 rounded-xl p-6 h-fit">
+                    <h3 class="text-xl font-bold text-dark mb-4 flex items-center">
+                        <i class="fa fa-shopping-cart text-primary mr-2"></i> 我的订单
+                    </h3>
+                    
+                    <div id="cartItems" class="space-y-4 mb-6">
+                        <!-- 购物车项目将通过JS动态添加 -->
+                        <p class="text-gray-500 text-center">暂无选择的服务</p>
+                    </div>
+                    
+                    <div class="border-t border-gray-200 pt-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="font-medium">总计：</span>
+                            <span id="cartTotal" class="font-bold text-primary">¥0</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 预约表单 -->
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-md p-6 md:p-8">
+                    <form id="bookingForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">姓名</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">手机号码</label>
+                                <input type="tel" id="phone" name="phone" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="date" class="block text-gray-700 font-medium mb-2">预约日期</label>
+                                <input type="date" id="date" name="date" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                            </div>
+                            <div>
+                                <label for="time" class="block text-gray-700 font-medium mb-2">预约时间</label>
+                                <select id="time" name="time" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                                    <option value="">请选择时间</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="20:00">20:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="address" class="block text-gray-700 font-medium mb-2">服务地址</label>
+                            <select id="address" name="address" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                                <option value="">请选择门店</option>
+                                <option value="总店：XX区XX路88号">总店：XX区XX路88号</option>
+                                <option value="分店1：XX区XX大道123号">分店1：XX区XX大道123号</option>
+                                <option value="分店2：XX区XX街456号">分店2：XX区XX街456号</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="notes" class="block text-gray-700 font-medium mb-2">特殊要求（选填）</label>
+                            <textarea id="notes" name="notes" rows="3"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"
+                                placeholder="例如：需要女技师、对力度的要求等"></textarea>
+                        </div>
+                        
+                        <button type="submit" id="submitBtn"
+                            class="w-full bg-primary text-white font-medium py-3 rounded-lg hover:bg-dark transition duration-300 flex justify-center items-center">
+                            <i class="fa fa-paper-plane mr-2"></i> 提交预约
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-16 md:py-24 bg-dark text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 联系方式 -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">联系我们</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa fa-globe text-secondary mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="font-medium">官方网址</p>
+                                <p>www.LenSPA.com</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-weixin text-secondary mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="font-medium">微信客服</p>
+                                <p>pass333555</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-clock-o text-secondary mt-1 mr-3 text-lg"></i>
+                            <div>
+                                <p class="font-medium">营业时间</p>
+                                <p>神秘</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- 二维码 -->
+                <div class="flex flex-col items-center justify-center">
+                    <div class="bg-white p-3 rounded-lg mb-4">
+                        <img src="https://picsum.photos/id/100/200/200" alt="微信二维码" class="w-48 h-48">
+                    </div>
+                    <p class="text-center">扫码添加微信客服<br>立享新人优惠</p>
+                </div>
+                
+                <!-- 订阅 -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">关注我们</h3>
+                    <p class="mb-4">订阅我们的优惠信息，第一时间获取最新活动</p>
+                    <form class="mb-6">
+                        <div class="flex">
+                            <input type="email" placeholder="您的邮箱地址"
+                                class="flex-1 px-4 py-2 rounded-l-lg focus:outline-none text-gray-800">
+                            <button type="submit" class="bg-secondary text-dark px-4 py-2 rounded-r-lg hover:bg-primary hover:text-white transition">
+                                订阅
+                            </button>
+                        </div>
+                    </form>
+                    <div class="flex space-x-4">
+                        <a href="https://www.LenSPA.com" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-dark transition" target="_blank">
+                            <i class="fa fa-globe"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-dark transition">
+                            <i class="fa fa-wechat"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary hover:text-dark transition">
+                            <i class="fa fa-qq"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-primary text-white py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left">
+                    <p>© 2025 Len大师 版权所有</p>
+                    <p class="text-sm mt-1">官网：www.LenSPA.com</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <ul class="flex space-x-6">
+                        <li><a href="#" class="hover:text-secondary transition">隐私政策</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">服务条款</a></li>
+                        <li><a href="#" class="hover:text-secondary transition">关于我们</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 成功提示弹窗 -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md w-full mx-4 transform transition-all">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa fa-check text-2xl text-green-500"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-2">预约提交成功！</h3>
+                <p class="text-gray-600 mb-6">我们的客服将在30分钟内与您联系确认预约信息</p>
+                <button id="closeModal" class="px-6 py-2 bg-primary text-white rounded-lg hover:bg-dark transition">
+                    确定
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 购物车功能
+        let cart = [];
+        const cartItemsEl = document.getElementById('cartItems');
+        const cartTotalEl = document.getElementById('cartTotal');
+        
+        // 添加服务到购物车
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const service = this.getAttribute('data-service');
+                const price = parseInt(this.getAttribute('data-price'));
+                
+                // 检查是否已添加
+                const existingItem = cart.find(item => item.service === service);
+                if (existingItem) {
+                    alert('该服务已添加到订单中');
+                    return;
+                }
+                
+                // 添加到购物车
+                cart.push({ service, price });
+                
+                // 更新购物车显示
+                updateCartDisplay();
+                
+                // 提示添加成功
+                this.innerHTML = '<i class="fa fa-check mr-1"></i> 已选择';
+                this.classList.add('bg-green-600');
+                this.disabled = true;
+            });
+        });
+        
+        // 更新购物车显示
+        function updateCartDisplay() {
+            if (cart.length === 0) {
+                cartItemsEl.innerHTML = '<p class="text-gray-500 text-center">暂无选择的服务</p>';
+                cartTotalEl.textContent = '¥0';
+                return;
+            }
+            
+            // 渲染购物车项目
+            let cartHtml = '';
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartHtml += `
+                    <div class="flex justify-between items-center bg-white p-3 rounded-lg shadow-sm">
+                        <div>
+                            <p class="font-medium">${item.service}</p>
+                            <p class="text-sm text-gray-500">¥${item.price}</p>
+                        </div>
+                        <button class="remove-item text-red-500 hover:text-red-700" data-index="${index}">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                `;
+            });
+            
+            cartItemsEl.innerHTML = cartHtml;
+            cartTotalEl.textContent = `¥${total}`;
+            
+            // 添加删除功能
+            document.querySelectorAll('.remove-item').forEach(button => {
+                button.addEventListener('click', function() {
+                    const index = parseInt(this.getAttribute('data-index'));
+                    const removedItem = cart[index];
+                    
+                    // 从购物车移除
+                    cart.splice(index, 1);
+                    
+                    // 恢复按钮状态
+                    document.querySelectorAll('.add-to-cart').forEach(btn => {
+                        if (btn.getAttribute('data-service') === removedItem.service) {
+                            btn.innerHTML = `选择此项 <i class="fa fa-plus ml-1"></i>`;
+                            btn.classList.remove('bg-green-600');
+                            btn.disabled = false;
+                        }
+                    });
+                    
+                    // 更新购物车显示
+                    updateCartDisplay();
+                });
+            });
+        }
+        
+        // 表单提交
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 验证购物车是否为空
+            if (cart.length === 0) {
+                alert('请先选择至少一项服务');
+                return;
+            }
+            
+            // 验证表单必填项
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const address = document.getElementById('address').value;
+            
+            if (!name || !phone || !date || !time || !address) {
+                alert('请填写完整的预约信息');
+                return;
+            }
+            
+            // 模拟提交成功
+            document.getElementById('successModal').classList.remove('hidden');
+            
+            // 重置表单和购物车
+            this.reset();
+            cart = [];
+            updateCartDisplay();
+            
+            // 恢复所有按钮状态
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.innerHTML = `选择此项 <i class="fa fa-plus ml-1"></i>`;
+                btn.classList.remove('bg-green-600');
+                btn.disabled = false;
+            });
+        });
+        
+        // 关闭弹窗
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('successModal').classList.add('hidden');
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单
+                document.getElementById('mobileMenu').classList.add('hidden');
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 设置最小日期为今天
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date').min = today;
+    </script>
+</body>
+</html>
